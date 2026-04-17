@@ -18,3 +18,5 @@ A web-based calendar and task manager built with HTML, CSS, and JavaScript.
 
 ## Run
 Open `index.html` in browser
+
+Live Demo: https://sarut1257.github.io/smart-calendar/
