@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Calendar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="calendar-container">
+  <h1>Smart Calendar</h1>
+
+  <div class="category-summary">
+    <div class="category-card study-card">
+      <span>Study</span>
+      <strong id="studyCount">0</strong>
+    </div>
+
+    <div class="category-card project-card">
+      <span>Project</span>
+      <strong id="projectCount">0</strong>
+    </div>
+
+    <div class="category-card personal-card">
+      <span>Personal</span>
+      <strong id="personalCount">0</strong>
+    </div>
+
+    <div class="category-card important-card">
+      <span>Important</span>
+      <strong id="importantCount">0</strong>
+    </div>
+  </div>
+
+  <div class="dashboard-summary">
+  <div class="summary-card">
+    <span class="summary-label">Today Tasks</span>
+    <strong id="todayTasksCount">0</strong>
+  </div>
+
+  <div class="summary-card">
+    <span class="summary-label">Completed Today</span>
+    <strong id="completedTodayCount">0</strong>
+  </div>
+
+  <div class="summary-card">
+    <span class="summary-label">Pending Today</span>
+    <strong id="pendingTodayCount">0</strong>
+  </div>
+
+  <div class="summary-card">
+    <span class="summary-label">This Month</span>
+    <strong id="monthTasksCount">0</strong>
+  </div>
+</div>
+
+<div class="next-task-box">
+  <span class="next-task-label">Next Task </span>
+  <div id="nextTaskContent" class="next-task-empty">
+    No upcoming task
+  </div>
+</div>
+
+  <div class="calendar-header">
+    <button id="prevBtn">◀</button>
+    <h2 id="monthYear"></h2>
+    <button id="nextBtn">▶</button>
+  </div>
+
+    <div class="weekdays">
+      <div>Sun</div>
+      <div>Mon</div>
+      <div>Tue</div>
+      <div>Wed</div>
+      <div>Thu</div>
+      <div>Fri</div>
+      <div>Sat</div>
+    </div>
+
+    <div id="calendar" class="calendar-grid"></div>
+
+    <div class="selected-date-box">
+      <h3>Selected Date</h3>
+      <p id="selectedDateText">No date selected</p>
+
+      <div class="task-input-area">
+        <input type="text" id="taskInput" placeholder="Enter a task..." />
+        <input type="time" id="taskTimeInput" />
+
+        <select id="categorySelect">
+          <option value="Study">Study</option>
+          <option value="Project">Project</option>
+          <option value="Personal">Personal</option>
+          <option value="Important">Important</option>
+        </select>
+
+        <button id="addTaskBtn">Add Task</button>
+      </div>
+    <div class="data-tools">
+      <button id="exportBtn">Export Data</button>
+      <label for="importInput" class="import-label">Import Data</label>
+      <input type="file" id="importInput" accept=".json" hidden />
+      </div>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search tasks..." />
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+      <div class="task-tools">
+        <button id="clearCompletedBtn">Clear Completed</button>
+        <button id="deleteAllBtn">Delete All Tasks</button>
+      </div>
+
+      <ul id="taskList"></ul>
+      <p id="emptyMessage" class="empty-message">No tasks for this date.</p>
+    </div>
+  </div>
+
+  <div id="editModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Edit Task</h3>
+
+      <input type="text" id="editTaskInput" placeholder="Edit task..." />
+      <input type="time" id="editTaskTimeInput" />
+
+      <select id="editCategorySelect">
+        <option value="Study">Study</option>
+        <option value="Project">Project</option>
+        <option value="Personal">Personal</option>
+        <option value="Important">Important</option>
+      </select>
+
+      <div class="modal-actions">
+        <button id="saveEditBtn">Save</button>
+        <button id="cancelEditBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> 
